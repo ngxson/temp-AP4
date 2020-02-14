@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1581350790 source:z:\algo4\tp-arbre-nguyenxuanson\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arbre.h"
+	"challenge_XNGUYEN_0.h"
+
+1581350250 z:\algo4\tp-arbre-nguyenxuanson\arbre.h
+	<stdio.h>
+	<stdlib.h>
+
+1581341560 z:\algo4\tp-arbre-nguyenxuanson\arbre.c
+	"arbre.h"
+
+1581341485 z:\algo4\tp-arbre-nguyenxuanson\challenge_xnguyen_1.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"arbre.h"
+
+1581341988 source:z:\algo4\tp-arbre-nguyenxuanson\challenge_xnguyen_1.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"arbre.h"
+
+1581351006 source:z:\algo4\tp-arbre-nguyenxuanson\arbre.c
+	"arbre.h"
+
+1581339950 z:\algo4\tp-arbre-nguyenxuanson\challenge_xnguyen_0.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"arbre.h"
+
+1581350360 source:z:\algo4\tp-arbre-nguyenxuanson\challenge_xnguyen_0.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"arbre.h"
+
