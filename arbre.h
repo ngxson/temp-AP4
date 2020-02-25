@@ -1,6 +1,8 @@
 #ifndef ARBRE_H_INCLUDED
 #define ARBRE_H_INCLUDED
 
+#define CHALLENGE 8
+
 #include <stdio.h>
 #include <stdlib.h>
 typedef int TValue;

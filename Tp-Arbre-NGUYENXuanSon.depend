@@ -43,3 +43,30 @@
 	<string.h>
 	"arbre.h"
 
+1582671134 source:d:\1projects\1dev\1archived\temp-ap4\arbre.c
+	"arbre.h"
+
+1582672814 d:\1projects\1dev\1archived\temp-ap4\arbre.h
+	<stdio.h>
+	<stdlib.h>
+
+1582672523 source:d:\1projects\1dev\1archived\temp-ap4\challenge_xnguyen_0.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"arbre.h"
+
+1582672528 source:d:\1projects\1dev\1archived\temp-ap4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arbre.h"
+	"challenge_XNGUYEN_0.h"
+
+1582672798 d:\1projects\1dev\1archived\temp-ap4\challenge_xnguyen_0.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"arbre.h"
+

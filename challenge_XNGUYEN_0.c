@@ -13,6 +13,7 @@ int evaluate(arbre * r) {
    return (r->cle + vg + vd)/3;
 }
 
+#if CHALLENGE == 1
 void challenge_1 (){
 
    arbre * noeud0 = NULL;
@@ -61,7 +62,9 @@ void challenge_1 (){
    noeud * noeud21 = creerNoeud(148);
    accroche(noeud5, noeud21);
 }
+#endif
 
+#if CHALLENGE == 2
 void challenge_2 (){
 
    arbre * noeud0 = NULL;
@@ -110,6 +113,8 @@ void challenge_2 (){
    noeud * noeud21 = creerNoeud(148);
    insererDansArbre(noeud0, noeud21);
 }
+#endif
+#if CHALLENGE == 3
 void challenge_3 (){
 
    arbre * noeud0 = NULL;
@@ -139,7 +144,9 @@ void challenge_3 (){
    tableau[20] = 148;
    insererTableau(noeud0, tableau, 21);
 }
+#endif
 
+#if CHALLENGE == 4
 void challenge_4 (){
 
    arbre * noeud0 = NULL;
@@ -170,7 +177,9 @@ void challenge_4 (){
    insererTableau(noeud0, tableau, 21);
    afficher(noeud0, 0);
 }
+#endif
 
+#if CHALLENGE == 5
 void challenge_5 (){
 
    arbre * noeud0 = NULL;
@@ -201,7 +210,9 @@ void challenge_5 (){
    insererTableau(noeud0, tableau, 21);
    afficherFonction(noeud0, 0, evaluate);
 }
+#endif
 
+#if CHALLENGE == 6
 void challenge_6 (){
 
    arbre * noeud0 = NULL;
@@ -233,7 +244,9 @@ void challenge_6 (){
    noeud * n5 = rechercherDerniereLettre(noeud0);
    printf("Node found for your final letter: %i (%c) =? 78 (N) \n", n5->cle, n5->cle);
 }
+#endif
 
+#if CHALLENGE == 7
 void challenge_7 (){
 
    arbre * noeud0 = NULL;
@@ -266,7 +279,9 @@ void challenge_7 (){
    int nbv = nbVal(noeud0, 'N');
    printf("\nYour final letter  (78) has been inserted %i times\n", nbv);
  }
+#endif
 
+#if CHALLENGE == 8
 void challenge_8 (){
 
    arbre * noeud0 = NULL;
@@ -301,7 +316,9 @@ void challenge_8 (){
    printf("\n============ SAVAGE CUT of 78 ============\n");
    afficher(noeud0, 0);
 }
+#endif
 
+#if CHALLENGE == 9
 void challenge_9 (){
 
    arbre * noeud0 = NULL;
@@ -352,7 +369,9 @@ void challenge_9 (){
    else {
       printf("Not lucky, the left child is NULL.\n"); }
 }
+#endif
 
+#if CHALLENGE == 10
 void challenge_10 (){
 
    arbre * noeud0 = NULL;
@@ -385,7 +404,9 @@ void challenge_10 (){
    printf("\nDepth-first traversal: \n");   parcoursProfondeur(noeud0);
    printf("\nSum: %i (should be %i) \n", somme(noeud0), 2583);
 }
-/*
+#endif
+
+#if CHALLENGE == 11
 void challenge_11 (){
 
    arbre * noeud0 = NULL;
@@ -419,7 +440,9 @@ void challenge_11 (){
    couperPetits(noeud0, 68);
    afficher(noeud0, 0);
 }
+#endif
 
+#if CHALLENGE == 12
 void challenge_12 (){
 
    arbre * noeud0 = NULL;
@@ -464,7 +487,9 @@ void challenge_12 (){
       printf("Ce n'est pas un AVL\n");
    }
 }
+#endif
 
+#if CHALLENGE == 13
 void challenge_13 (){
 
    arbre * noeud0 = NULL;
@@ -531,7 +556,9 @@ void challenge_13 (){
    afficherFonction(noeud0, 0, difference);
    printf("\n");
 }
+#endif
 
+#if CHALLENGE == 14
 void challenge_14 (){
 
    arbre * noeud0 = NULL;
@@ -572,7 +599,9 @@ void challenge_14 (){
    afficherFonction(noeud0, 0, difference);
    printf("\n");
 }
+#endif
 
+#if CHALLENGE == 15
 void challenge_15 (){
 
    arbre * noeud0 = NULL;
@@ -606,5 +635,6 @@ void challenge_15 (){
    afficherFonction(noeud0, 0, difference);
    printf("\n");
    printf("CONGRATULATIONS! YOU HAVE REACHED THE END!!\n");
-}*/
+}
+#endif
 
