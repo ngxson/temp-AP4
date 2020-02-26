@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "arbre.h"
+#include "challenge_def.h"
 #include "challenge_XNGUYEN_0.h"
 
 int main()
@@ -22,7 +23,7 @@ int main()
         accroche(unArbre, noeud1);
         accroche(unArbre, noeud2);
         accroche(noeud1, noeud3);*/
-        insererDansArbre(unArbre, creerNoeud(5));
+        /*insererDansArbre(unArbre, creerNoeud(5));
         insererDansArbre(unArbre, creerNoeud(666));
         insererDansArbre(unArbre, creerNoeud(1000));
         insererDansArbre(unArbre, creerNoeud(100));
@@ -31,7 +32,9 @@ int main()
         int tab[10] = {1, 45, 800, -40, 300, 4, 5, 333, 1001, 700};
         insererTableau(unArbre, tab, 10);
         //deforestationSauvage(rechercher(unArbre, 100));
-        deforestation(rechercher(unArbre, 100));
+        noeud* ch100 = rechercher(unArbre, 100);
+        deforestation(ch100);
+        deforestation(ch100);
         //afficherFonction(unArbre, 0, getCle);
         /*noeud* cherche100 = rechercher(unArbre, 100);
         if (cherche100 != NULL) printf("J'ai trouve le noeud 100.\n");
@@ -43,6 +46,13 @@ int main()
         afficherFonction(unArbre, 0, getCle);
         printf("\nsomme: %i\n", somme(unArbre));
         parcoursProfondeur(unArbre);*/
+
+
+        // from Exercise 35
+        int tab[6] = {1000,5,100,1,6,200};
+        insererTableau(unArbre, tab, 6);
+        afficherFonction(unArbre, 0, getCle);
+        //couperPetits(unArbre, 7);
 
         return 0;
     #endif // CHALLENGE

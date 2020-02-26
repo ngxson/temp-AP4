@@ -1,0 +1,48 @@
+Q7: Parce-qu'on appelle la fonction free pour n->FDroit et n->FGauche, qui sont tous deux nuls. dans la norme ISO-IEC 9899, ils ont déclaré que "La fonction free(ptr): Si ptr est un pointeur NULL, aucune action ne se produit."
+
+Challenge 11
+=====
+BEGIN [XNGUYEN] C#=11
+=> Testing  couperPetits
+111---152---160---180---200
+                        |
+                        181
+                  |
+                  162
+            |
+            157
+            |
+            156
+      |
+      131---148
+      |
+      113---118
+|
+98----108
+|
+35----78----90
+      |
+      50----60----65
+|
+30
+Choosen value for LittleCut: 68
+111---152---160---180---200
+                        |
+                        181
+                  |
+                  162
+            |
+            157
+            |
+            156
+      |
+      131---148
+      |
+      113---118
+|
+98----108
+|
+78----90
+END [XNGUYEN]
+===
+

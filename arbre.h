@@ -1,8 +1,6 @@
 #ifndef ARBRE_H_INCLUDED
 #define ARBRE_H_INCLUDED
 
-#define CHALLENGE 8
-
 #include <stdio.h>
 #include <stdlib.h>
 typedef int TValue;
@@ -125,5 +123,7 @@ int somme(arbre* r);
  *
  */
 void parcoursProfondeur(arbre* r);
+
+void couperPetits(arbre* a, int seuil);
 
 #endif // ARBRE_H_INCLUDED

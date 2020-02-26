@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#include "challenge_def.h"
 #include "arbre.h"
 
 int evaluate(arbre * r) {

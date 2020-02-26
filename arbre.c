@@ -168,6 +168,24 @@ void parcoursProfondeur(arbre* r) {
     parcoursProfondeur(r->FDroit);
 }
 
+void couperPetits(arbre* r, int seuil) {
+    //printf("couperPetits %d %d\n", r->cle, seuil);
+    if (r == NULL) return;
+    noeud* fg = r->FGauche;
+    if (fg == NULL) return;
+    if (fg->cle < seuil) {
+        if (fg->FDroit != NULL) {
+            r->FGauche = fg->FDroit;
+            couperPetits(r, seuil);
+        } else {
+            r->FGauche = NULL;
+        }
+        
+    } else {
+        couperPetits(fg, seuil);
+    }
+}
+
 
 
 

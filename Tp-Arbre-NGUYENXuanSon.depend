@@ -43,24 +43,26 @@
 	<string.h>
 	"arbre.h"
 
-1582671134 source:d:\1projects\1dev\1archived\temp-ap4\arbre.c
+1582674695 source:d:\1projects\1dev\1archived\temp-ap4\arbre.c
 	"arbre.h"
 
-1582672814 d:\1projects\1dev\1archived\temp-ap4\arbre.h
+1582675331 d:\1projects\1dev\1archived\temp-ap4\arbre.h
 	<stdio.h>
 	<stdlib.h>
 
-1582672523 source:d:\1projects\1dev\1archived\temp-ap4\challenge_xnguyen_0.c
+1582675390 source:d:\1projects\1dev\1archived\temp-ap4\challenge_xnguyen_0.c
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	<string.h>
+	"challenge_def.h"
 	"arbre.h"
 
-1582672528 source:d:\1projects\1dev\1archived\temp-ap4\main.c
+1582675381 source:d:\1projects\1dev\1archived\temp-ap4\main.c
 	<stdio.h>
 	<stdlib.h>
 	"arbre.h"
+	"challenge_def.h"
 	"challenge_XNGUYEN_0.h"
 
 1582672798 d:\1projects\1dev\1archived\temp-ap4\challenge_xnguyen_0.h
@@ -69,4 +71,6 @@
 	<math.h>
 	<string.h>
 	"arbre.h"
+
+1582675408 d:\1projects\1dev\1archived\temp-ap4\challenge_def.h
 
