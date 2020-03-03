@@ -124,6 +124,19 @@ int somme(arbre* r);
  */
 void parcoursProfondeur(arbre* r);
 
-void couperPetits(arbre* a, int seuil);
+/** \brief Couper les noeuds dont la valeur sont inferieurs a seuil (elagage)
+ *
+ * \param r arbre*
+ * \param seuil int
+ * \return void
+ *
+ */
+void couperPetits(arbre* ar, int seuil);
+
+int initHauteur(arbre* a);
+int difference(arbre* a);
+int estAVL(arbre* r);
+arbre* getSousArbreDesequilibre(arbre* r);
+arbre* aUnFilsDesequilibre(arbre* r, int* pADroite);
 
 #endif // ARBRE_H_INCLUDED

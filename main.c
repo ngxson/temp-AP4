@@ -49,10 +49,44 @@ int main()
 
 
         // from Exercise 35
-        int tab[6] = {1000,5,100,1,6,200};
-        insererTableau(unArbre, tab, 6);
-        afficherFonction(unArbre, 0, getCle);
+        //int tab[6] = {1000,5,100,1,6,200};
+        int tab[14] = {666, 5, 1000, 100, 1, 45, 800, -40, 300, 4, 5, 333, 1001, 700};
+        arbre* r2 = creerNoeud(100);
+        int tab2[17] = {0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 160};
+        insererTableau(unArbre, tab, 14);
+        insererTableau(r2, tab2, 17);
+        //afficherFonction(unArbre, 0, getCle);
+        //printf("\n\n\n----------\n\n");
+        //rotationDroite(&unArbre);
+        initHauteur(unArbre);
+        //difference(unArbre);
+        initHauteur(r2);
+        afficherFonction(r2, 0, getCle);
+        printf("\n\n\n----------\n\n");
+        afficherFonction(r2, 0, getValeur);
+        printf("\n\n\n----------\n\n");
+        afficherFonction(r2, 0, difference);
         //couperPetits(unArbre, 7);
+
+        // Ex 46
+        printf("\n\n\n----------\n\n");
+        arbre * r3 = getSousArbreDesequilibre(r2);
+        printf("Apres recherche du desequilibre\n");
+        afficher(r3, 0);
+        printf("\n");
+        afficherFonction(r3, 0, difference);
+        printf("\n");
+        if(estAVL(r3))
+            printf("Cet arbre est un AVL\n");
+        else
+            printf("Cet arbre n\'est pas un AVL\n");
+        int* aDroite;
+        arbre* r4 = aUnFilsDesequilibre(r2, aDroite);
+        //printf("aUnFilsDesequilibre %d %d", r4->cle, aDroite);
+        printf("\n\n\n----------\n\n");
+        tranformerVersAVL(&r2);
+        afficherFonction(r2, 0, getCle);
+
 
         return 0;
     #endif // CHALLENGE

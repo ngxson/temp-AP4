@@ -45,13 +45,14 @@ void insererTableau(arbre* r, int* tableau, int taille) {
     }
 }
 
-int count_numbers(int num) {
-   int count = 0;
-   while (num != 0) {
-      count++;
-      num /= 10;
-   }
-   return count;
+int count_numbers(int num_input) {
+    int num = num_input < 0 ? -num_input : num_input;
+    int count = 0;
+    while (num != 0) {
+        count++;
+        num /= 10;
+    }
+    return count + (num_input < 0);
 }
 
 void afficher(arbre * r, int decalage) {
@@ -95,7 +96,7 @@ void afficherFonction(arbre* r, int decalage, int(*mafct)(arbre* r)) {
 
     if (r->FDroit != NULL) {
         for (int i = 0 ; i < 6 - count_numbers(val) ; i++) {
-            printf("-");
+            printf("~");
         }
         afficherFonction(r->FDroit, decalage + 6, mafct);
     }
@@ -185,6 +186,102 @@ void couperPetits(arbre* r, int seuil) {
         couperPetits(fg, seuil);
     }
 }
+
+#define MAX(a,b) ((a) > (b) ? (a) : (b))
+#define MIN(a,b) ((a) < (b) ? (a) : (b))
+
+int initHauteur(arbre* a) {
+    if (a == NULL) return -1;
+    int hg = initHauteur(a->FGauche) + 1;
+    int hd = initHauteur(a->FDroit) + 1;
+    a->valeur = MAX(hg, hd);
+    return a->valeur;
+}
+
+int difference(arbre* a) {
+    if (a == NULL) return -1;
+    int valG = (a->FGauche == NULL ? -1 : a->FGauche->valeur);
+    int valD = (a->FDroit == NULL ? -1 : a->FDroit->valeur);
+    return valG - valD;
+}
+
+#define ABS(x)  ( (x<0) ? -(x) : x )
+
+int estAVL(arbre* r) {
+    if (r == NULL) return 1;
+    return ABS(difference(r)) <= 1
+        && estAVL(r->FGauche) && estAVL(r->FDroit);
+}
+
+void rotationDroite(arbre** pr) {
+    noeud* x = *pr;
+    noeud* y = x->FGauche;
+    x->FGauche = y->FDroit;
+    y->FDroit = x;
+    *pr = y;
+    initHauteur(*pr);
+}
+
+void rotationGauche(arbre** pr) {
+    noeud* x = *pr;
+    noeud* y = x->FDroit;
+    x->FDroit = y->FGauche;
+    y->FGauche = x;
+    *pr = y;
+    initHauteur(*pr);
+}
+
+arbre* getSousArbreDesequilibre(arbre* r) {
+    if (r == NULL) return NULL;
+    arbre* found;
+    found = getSousArbreDesequilibre(r->FGauche);
+    if (found != NULL) return found;
+    found = getSousArbreDesequilibre(r->FDroit);
+    if (found != NULL) return found;
+    return ABS(r->valeur) <= 1 ? NULL : r;
+}
+
+arbre* rechercherParent(noeud* n, arbre* r) {
+    noeud* p;
+    if (r == NULL) return NULL;
+    //printf("rechercherParent %d %d\n", n->cle, r->cle);
+    if (r->FGauche != NULL && n->cle == r->FGauche->cle) return r->FGauche;
+    if (r->FDroit != NULL && n->cle == r->FDroit->cle) return r->FDroit;
+    p = rechercherParent(n, r->FGauche);
+    if (p != NULL) return p;
+    p = rechercherParent(n, r->FDroit);
+    if (p != NULL) return p;
+    return NULL;
+}
+
+arbre* aUnFilsDesequilibre(arbre* r, int* pADroite) {
+    int ADroite;
+    arbre* sousArbreDesequilibre = getSousArbreDesequilibre(r);
+    if (sousArbreDesequilibre == NULL) return NULL;
+    arbre* parent = rechercherParent(sousArbreDesequilibre, r);
+    ADroite = parent->FDroit == sousArbreDesequilibre;
+    pADroite = &ADroite;
+    //printf("rechercherParent %d\n", parent->cle);
+    return parent;
+}
+
+void tranformerVersAVL(arbre** pr) {
+    arbre* r = *pr;
+    arbre* n;
+    int* aDroite;
+    if (r->FGauche != NULL) tranformerVersAVL(&r->FGauche);
+    if (r->FDroit != NULL) tranformerVersAVL(&r->FDroit);
+    n = aUnFilsDesequilibre(r, aDroite);
+    if (n == NULL) return;
+    printf("aUnFilsDesequilibre %d\n", n->cle);
+    if (aDroite) {
+        rotationGauche(pr);
+    } else {
+        rotationDroite(pr);
+    }
+}
+
+
 
 
 
